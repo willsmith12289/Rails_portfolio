@@ -3,7 +3,6 @@
 @import 'jquery-te';
 
 html, body {
-  font-family: 'Raleway', sans-serif;
   background-color: $grey;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -146,11 +145,17 @@ a {
   background: $grey;
   //border: 1px solid black;
 
+  .pageHeading {
+    color: $white;
+    font-family: $jose;
+    text-align: center;
+    font-size: 4em;
+    clear: left;
+    margin: 1em 0 0 0;
+  }
   .alert {
     width: 15%;
-    // height: 15px;
-    // border: 1px solid black;
-    margin: 1em 30em 1em 30em;
+    margin: 0 30em 0 30em;
   }
   .post_wrapper {
     padding: 3em;
