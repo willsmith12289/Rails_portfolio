@@ -1,0 +1,21 @@
+  <h3 class="pageHeading">Contact Us</h3>
+
+<%= form_for @message do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, :required => true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.bootsy_area :message, :as => :text, :required => true, class: "form-control" %>
+  <div class= "hidden">
+    <%= f.hidden_field :nickname, :hint => 'Leave this field blank!' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Send message', :class=> "btn btn-primary" %>
+  </div>
+  <% end %>
