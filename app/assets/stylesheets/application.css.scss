@@ -1,6 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootsy';
 @import 'normalize';
 @import 'variables';
-@import 'jquery-te';
 
 html, body {
   background-color: $grey;
@@ -143,11 +145,12 @@ a {
   width: 80%;
   margin: auto;
   background: $grey;
+  font-family: $jose;
   //border: 1px solid black;
 
   .pageHeading {
     color: $white;
-    font-family: $jose;
+    //font-family: $jose;
     text-align: center;
     font-size: 4em;
     clear: left;
@@ -165,47 +168,50 @@ a {
       margin: 0;
 
       a {
-        font-weight: 500;
-        text-decoration: none;
-        color: #2a2f35;
+        color: $white;
+        text-align: center;
         font-size: 1.5em;
+        text-decoration: none;
 
         &:hover {
           color: #33acb7;
         }
       }
     }
-    .date_and_author {
-      color: #9eafba;
-      margin: .5em 0 0 0;
+    .date {
+      text-align: center;
+      color: $darkgrey;
     }
   }
   #post_content {
     padding: 1em 3em;
 
     .title {
-      font-weight: 500;
-      text-decoration: none;
-      color: #2a2f35;
+      color: $white;
+      text-align: center;
       font-size: 2.5em;
       margin-bottom: 0;
     }
     .body {
-      font-size: 1.1em;
+      color: $darkgrey;
+      font-weight: 600;
+      font-size: 1.5em;
       line-height: 1.75;
-    }
-    .date_and_author {
-      color: #9eafba;
-      margin: .5em 0 2em 0;
     }
     #comments {
       h2 {
+        color: $darkgrey;
+        font-weight: 400;
         margin: 3em 0 1em 0;
         border-bottom: 1px solid #d6dce0;
         padding-bottom: 0.5em;
       }
       h3 {
         margin-top: 2em;
+      }
+      label {
+        color: $darkgrey;
+        font-size: 1.5em;
       }
       .comment {
         border-bottom: 1px solid #d6dce0;
@@ -289,17 +295,18 @@ a {
     min-height: 180px;
   }
   input[type="submit"] {
-    outline: none;
-    background: transparent;
-    border: 1px solid #d6dce0;
-    padding: .5em 1.5em;
+    font-family: $lato;
+    color: $white;
+    border: 0;
+    background: $darkblue;
+    padding: .8em 1.5em;
     font-size: 1.1em;
-    border-radius: 1.5em;
-    margin-left: .5em;
+    border-radius: .5em;
+    margin-left: 1.5em;
 
     &:hover {
-      border: 1px solid #33acb7;
-      color: #33acb7;
+      border: $border;
+      color: $orange;
     }
   }
 }
