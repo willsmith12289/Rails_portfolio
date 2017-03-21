@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'paperclip'
 gem 'mail_form'
 gem 'foreman'
 gem 'bootsy', '2.3'

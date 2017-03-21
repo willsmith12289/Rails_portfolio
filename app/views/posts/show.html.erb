@@ -1,4 +1,4 @@
-<article id="post_content">
+<section id="post_content">
   <h1 class="pageHeading">
     <%= @post.title %>
   </h1>
@@ -15,7 +15,7 @@
     <%= @post.body.html_safe %>
   </p>
 
-  <section id="comments">
+  <article id="comments">
     <h2>
       <%= @post.comments.count %> Comments
     </h2>
@@ -27,5 +27,5 @@
     <% end %>
     <h3>Add a Comment:</h3>
     
-  </section>
-</article>
+  </article>
+</section>

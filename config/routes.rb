@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   
   devise_for :users
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/contact', to: 'messages#new', as: 'contact'
   post '/contact', to: 'messages#create'
-  get '/projects', to: 'pages#projects'
+  
 end
