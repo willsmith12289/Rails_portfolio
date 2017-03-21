@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :projects
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   
   devise_for :users
-
+  resources :projects
   resources :posts do
     resources :comments
   end

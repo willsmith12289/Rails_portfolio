@@ -8,7 +8,7 @@ Bootsy.setup do |config|
   #   font_styles: true,
   #   emphasis: true,
   #   lists: true,
-    html: true,
+  #  html: true,
   #   link: true,
   #   image: true,
   #   color: true
