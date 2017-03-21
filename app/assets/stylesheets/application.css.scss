@@ -216,11 +216,13 @@ a {
     }
     #comments {
       h2 {
+        clear: left;
         color: $darkgrey;
         font-weight: 400;
-        margin: 3em 0 1em 0;
+        //margin-top: 10px;
         border-bottom: 1px solid #d6dce0;
-        padding-bottom: 0.5em;
+        border-top: 1px solid #d6dce0;
+        padding: 0.5em 0;
       }
       h3 {
         margin-top: 2em;

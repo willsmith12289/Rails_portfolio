@@ -19,13 +19,9 @@
     <h2>
       <%= @post.comments.count %> Comments
     </h2>
-    <% if user_signed_in? %>
-      <%= render @post.comments %>
-      <%= render "comments/form" %>
-    <% else %>
-      <%= link_to "Sign Up to Comment", new_user_session_path %>
-    <% end %>
+    <%= render @post.comments %>
     <h3>Add a Comment:</h3>
+      <%= render "comments/form" %>
     
   </article>
 </section>
