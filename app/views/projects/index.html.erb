@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
 <section id="post_content">
   <h1 class="pageHeading">Listing Projects</h1>
   
     <% count = 0 %>
     <div class="row">
       <% @projects.each do |project| %>
-        <% if count == 3 %>
+        <% if count%3 == 0 %>
     </div>
+        <% end %>
     <div class="row">
-        <% else %>
           <a href="<%= project.url %>">
             <div class="col-md-4">
               <h2 class="title"><%= project.name %></h2>
               <figure>
-                <%= image_tag project.image.url(:medium) %>
+                <%= image_tag project.image.thumb.url%>
                 <figcaption>
                   <%= project.description %>
                 </figcaption>
@@ -23,13 +22,12 @@
               <% end -%>
             </div>
           </a>
-        <% end -%>
         <% count += 1 %>
       <% end -%>
     </div>
 
   <% if user_signed_in? %>
   <br>
-    <%= link_to 'New Project', new_project_path, class: 'button btn-body' %>
+    <%= link_to 'All Projects', projects_path, class: 'button btn-body' %>
   <% end -%>
 </section>
