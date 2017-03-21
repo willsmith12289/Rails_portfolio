@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'mail_form'
-gem 'foreman'
 gem 'bootsy', '2.3'
 gem 'rails', '4.2.6'
 gem 'sqlite3'
