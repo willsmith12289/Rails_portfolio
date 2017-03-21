@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog2</title>
+  <title>Portfolio</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,900,700,300italic,100italic,400italic,700italic,900italic|Playfair+Display:400,400italic,700italic,700,900,900italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,700italic,700,600italic,600,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
@@ -12,13 +12,15 @@
 </head>
 <body>
   <div id="banner">
+
     <div id="logo">
       <%= link_to root_path do%>
         <%= image_tag "me.png", size: "200x200", id: "me" %>
       <% end %>
     </div>
+
     <ul id="nav">
-        <li class="category">William Smith</li>
+      <li class="category">William Smith</li>
       <% if current_page?(root_path) %>
         <li>
           <%= link_to "About", about_path %>
@@ -30,80 +32,98 @@
           <%= link_to "Projects", projects_path %>
         </li>
         <% elsif current_page?(about_path) %>
-        <li>
-          <%= link_to "Contact", contact_path %>
-        </li>
-        <li>
-          <%= link_to "Blog", root_path %>
-        </li>
-        <li>
-          <%= link_to "Projects", projects_path %>
-        </li>
+          <li>
+            <%= link_to "Contact", contact_path %>
+          </li>
+          <li>
+            <%= link_to "Blog", root_path %>
+          </li>
+          <li>
+            <%= link_to "Projects", projects_path %>
+          </li>
         <% elsif current_page?(contact_path) %>
-        <li>
-          <%= link_to "About", about_path %>
-        </li>
-        <li>
-          <%= link_to "Blog", root_path %>
-        </li>
-        <li>
-          <%= link_to "Projects", projects_path %>
-        </li>
+          <li>
+            <%= link_to "About", about_path %>
+          </li>
+          <li>
+            <%= link_to "Blog", root_path %>
+          </li>
+          <li>
+            <%= link_to "Projects", projects_path %>
+          </li>
         <% elsif current_page?(projects_path) %>
-        <li>
-          <%= link_to "About", about_path %>
-        </li>
-        <li>
-          <%= link_to "Blog", root_path %>
-        </li>
-        <li>
-          <%= link_to "Contact", contact_path %>
-        </li>
+          <li>
+            <%= link_to "About", about_path %>
+          </li>
+          <li>
+            <%= link_to "Blog", root_path %>
+          </li>
+          <li>
+            <%= link_to "Contact", contact_path %>
+          </li>
+        <% elsif current_page?(messages_path) %>
+          <li>
+            <%= link_to "About", about_path %>
+          </li>
+          <li>
+            <%= link_to "Projects", projects_path %>
+          </li>
+          <li>
+            <%= link_to "All Posts", root_path %>
+          </li>
         <% else %>
-        <li>
-          <%= link_to "About", about_path %>
-        </li>
-        <li>
-          <%= link_to "Contact", contact_path %>
-        </li>
-        <li>
-          <%= link_to "All Posts", root_path %>
-        </li>
+          <li>
+            <%= link_to "About", about_path %>
+          </li>
+          <li>
+            <%= link_to "Projects", projects_path %>
+          </li>
+          <li>
+            <%= link_to "Blog", root_path %>
+          </li>
       <% end %>
     </ul>
+
     <ul id="socialMedia">
       <li class="category">Social Media</li>
-      <li><a href="">FaceBook</a></li>
-      <li><a href="">Instagram</a></li>
-      <li><a href="">LinkedIn</a></li>
-      <li><a href="">GitHub</a></li>
-      <li><a href="">Twitter</a></li>
+      <li>
+        <a href="https://www.instagram.com/willsmith12289/">Instagram</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/william-smith-916aab119/">LinkedIn</a>
+      </li>
+      <li>
+        <a href="https://github.com/willsmith12289">GitHub</a>
+      </li>
     </ul>
-    <h1 id="title">
-      Wills Site
-    </h1>
+
+    <h1 id="title">Wills Site</h1>
+
     <% if !user_signed_in? %>
       <span class="sign_in">
         <%= link_to "Admin Login", new_user_session_path %>
       </span>
     <% end -%>
+
     <% if user_signed_in? %>
       <div class="buttons">
       <% if current_user.try(:admin?) %>
         <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <button class="button"><%= link_to "New Project", new_project_path %></button>
       <% end %>
         <button class="button"><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></button>
       </div>
     <% end %>
+
   </div>
+
   <section id="main_content">
-      <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert") %>
-      <% end %>
-<%= yield %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+
+    <%= yield %>
   </section>
-
-
 
 </body>
 </html>

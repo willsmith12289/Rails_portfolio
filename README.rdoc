@@ -1,2 +1,10 @@
 == README
-remove jquery-te and install bootsy gem https://github.com/volmer/bootsy
+use "foreman start" to run server
+
+
+generate projects scaffold with :name, :description, :image, :url
+	guest access /projects through projects#index
+	admin access :new :show :create :edit :update :destroy
+
+
+install paperclip gem to attatch image to projects model
